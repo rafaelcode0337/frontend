@@ -1,0 +1,88 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #020a14;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #cecece;
+}
+.form{
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(17, 25, 40, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.125);
+        max-width: 40em;
+        min-width: 100%;
+        padding: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5em;
+        z-index: 1;
+}
+.form h1 {
+   font-size: 1.5em;
+}
+
+.form > * {
+        z-index: 1;
+}
+.form::before, form::after{
+        content: "";
+        width: 5em;
+        height: 5em;
+        display: block;
+        border: .2em solid #0a121dd2;
+        position: absolute;
+        top: 1em;
+        right: -2em;
+        border-radius: .5em;
+        transform: rotate(-45deg);
+        z-index: -1;
+}
+.form::after{
+	top: -1em;
+        transform: rotate(-70deg);
+        border-color: #6500c43f;
+}
+@media (max-width: 400px) {
+    .form::before, form::after{      
+        top: .1em;
+        right: .1em;       
+    }
+
+}
+.form input{
+    background-color: transparent;
+    border: none;
+    border-bottom: .1em solid #6500c4;
+    color: #cecece;
+    font-size: 1em;
+    padding: .2em;
+}
+.form button{
+    width: fit-content;
+    background-color: #6500c4;
+    border: none;
+    padding: .5em 1em;
+    color: #cecece;
+}
+.login-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+a {
+    text-decoration: none;
+    color: #cecece;
+    font-size: .8em;
+}
